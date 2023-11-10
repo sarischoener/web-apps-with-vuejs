@@ -1,7 +1,7 @@
 Vue.createApp({
   data() {
     return {
-      userName: "John Doe",
+      activeTab: 1,
     };
   },
 }).mount("#app");

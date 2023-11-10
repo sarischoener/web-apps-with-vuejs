@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task - From static HTML to a Vue Instance</title>
+    <title>Task - Attribute Binding</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -20,14 +20,19 @@
         </section>
     </header>
     <main>
-        <div class="inside">
-            <div id="app" class="card">
-                <h2>Welcome back <strong>{{ userName }}</strong>!</h2>
-                <p>
-                    You logged in on {{ new Date().toLocaleString('en-us') }}<br>
-                    We wish you a pleasant day.
-                </p>
-            </div>
+        <div id="app" class="inside">
+            <h1 :id="headline.replace(/\s/g, '-').toLowerCase()">{{ headline }}</h1>
+            <p>
+                Directives are special attributes with the <code>v-</code> prefix.
+                Directive attribute values are expected to be
+                <strong>a single JavaScript expression</strong> (with the exception of
+                <code>v-for</code> and <code>v-on</code>, which will be discussed
+                later). A directive's job is to reactively apply side effects to the
+                DOM when the value of its expression changes. Let's review the example
+                we saw in the introduction:
+            </p>
+
+            <img v-bind="imageAttrs" />
         </div>
     </main>
     <script src="https://unpkg.com/vue@next"></script>

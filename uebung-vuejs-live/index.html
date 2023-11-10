@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basics</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-html="<h1>Hello</h1>"></div>
+        <div v-text="'Hello Welt!"></div>
+        <div v-once=></div>
+        <div v-pre="{{}}"></div>
+        <div v-if="currentQuestion < question.length">Condition Met</div>
+        <hr v-else-if="otherCOndition" />
+        <div v-else>Condition Not Met</div>
+
+        <button v-on:click="onClick">Click Me</button>
+        <button v-on:click="onClick($event)">Click Me</button>
+        <button @click="onClick">Click Me</button>
+
+        <div v-show="false"></div>
+
+        <div v-for="element in questions" :key="element.id">
+            {{element.difficulty}}
+        </div>
+
+        <div v-bind:class="{}"></div>
+        <img :src="imageUrl" />
+    </div>
+
+    <script type="module" src="script.js" />
+</body>
+
+</html>
